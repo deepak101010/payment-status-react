@@ -143,8 +143,9 @@ body {
   border-bottom-right-radius: 15px;
   padding: 0 25px 25px 25px;
   position: relative;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
   margin: -10px auto 0;
+  z-index: 10;
 }
 
 .receipt-box {
@@ -152,7 +153,7 @@ body {
   position: relative;
 }
 
-.receipt-box:before,
+/* .receipt-box:before,
 .receipt-box:after {
   content: "";
   position: absolute;
@@ -165,9 +166,9 @@ body {
       #f8f8f8 5px,
       #f8f8f8 10px);
   z-index: 1;
-}
+} */
 
-.receipt-box:before {
+/* .receipt-box:before {
   top: -10px;
 }
 
@@ -178,7 +179,7 @@ body {
       white 5px,
       #f8f8f8 5px,
       #f8f8f8 10px);
-}
+} */
 
 .receipt-box h1 {
   font-size: 2.5rem;
@@ -247,9 +248,18 @@ body {
 
 @media (max-width: 500px) {
 
-  .receipt-container,
+  .modal-overlay {
+    padding: 0px;
+    }
+
+  .receipt-container{
+    width: 14.5rem;
+    margin: -24px auto 0px;
+  }
+
   .status-box {
-    margin: 0 10px;
+    width: 16.5rem;
+    margin: 10px auto 10px auto;
   }
 
   .receipt-box {
