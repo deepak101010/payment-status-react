@@ -1,0 +1,258 @@
+body {
+  background: #f8f8f8;
+  font-family: 'Inter', sans-serif;
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+}
+
+.container-form {
+  max-width: 500px;
+  margin: 30px auto;
+  padding: 0 15px;
+}
+
+.payment-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.payment-form input,
+.payment-form select {
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  width: 100%;
+  box-sizing: border-box;
+  font-size: 14px;
+}
+
+.payment-form button {
+  padding: 12px;
+  background: #0d6efd;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.2s;
+}
+
+.payment-form button:hover {
+  background: #0b5ed7;
+}
+
+
+/* Modal */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  padding: 10px;
+}
+
+.modal-wrapper {
+  width: 100%;
+  max-width: 480px;
+  text-align: center;
+  position: relative;
+  animation: fadeIn 0.3s ease;
+}
+
+/* Status Box */
+.status-box {
+  background: white;
+  border-radius: 15px;
+  padding: 25px 25px 5px 25px;
+  position: relative;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  z-index: 10;
+}
+
+/* Close Button */
+.close-btn {
+  position: absolute;
+  right: 15px;
+  top: 12px;
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: #444;
+}
+
+/* Status Icon*/
+.status-indicator {
+  width: 75px;
+  height: 75px;
+  border-radius: 50%;
+  color: white;
+  font-size: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 20px auto 10px;
+  font-weight: bold;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.timer {
+  background: #f59e0b;
+}
+
+.success-circle {
+  background: #22c55e;
+}
+
+.failed-circle {
+  background: #ef4444;
+}
+
+/* Modal Header */
+.modal-header-section h3 {
+  margin: 10px 0 5px;
+  font-size: 1.5rem;
+  color: #333;
+  font-weight: 700;
+}
+
+.modal-header-section p {
+  color: #555;
+  font-size: 14px;
+  margin: 0 0 20px 0;
+  line-height: 1.4;
+}
+
+/* Receipt Container */
+.receipt-container {
+  width: 22rem;
+  background: white;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  padding: 0 25px 25px 25px;
+  position: relative;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+  margin: -10px auto 0;
+}
+
+.receipt-box {
+  padding: 20px 5px;
+  position: relative;
+}
+
+.receipt-box:before,
+.receipt-box:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 10px;
+  background: repeating-linear-gradient(-45deg,
+      white 0,
+      white 5px,
+      #f8f8f8 5px,
+      #f8f8f8 10px);
+  z-index: 1;
+}
+
+.receipt-box:before {
+  top: -10px;
+}
+
+.receipt-box:after {
+  bottom: -10px;
+  background: repeating-linear-gradient(45deg,
+      white 0,
+      white 5px,
+      #f8f8f8 5px,
+      #f8f8f8 10px);
+}
+
+.receipt-box h1 {
+  font-size: 2.5rem;
+  margin: 0 0 5px 0;
+  font-weight: 800;
+  color: #1f2937;
+}
+
+.in-words {
+  margin-bottom: 20px;
+  color: #6b7280;
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.details {
+  text-align: left;
+  font-size: 14px;
+  padding-top: 10px;
+  border-top: 1px dashed #e5e7eb;
+}
+
+.details p {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px 0;
+  font-weight: 500;
+  color: #374151;
+}
+
+.details p span:first-child {
+  font-weight: normal;
+  color: #6b7280;
+}
+
+.primary-btn {
+  margin-top: 25px;
+  padding: 12px;
+  width: 100%;
+  background: #ef4444;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.2s;
+}
+
+.primary-btn:hover {
+  background: #dc2626;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(239, 68, 68, 0.4);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@media (max-width: 500px) {
+
+  .receipt-container,
+  .status-box {
+    margin: 0 10px;
+  }
+
+  .receipt-box {
+    padding: 20px 0;
+  }
+}
