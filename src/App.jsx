@@ -7,7 +7,7 @@ const App = () => {
   const initialForm = {
     amount: "100",
     account: "9283649056",
-    sender: "Punish",
+    sender: "Deepak",
     paymentType: "IMPS",
     status: "success",
   };
